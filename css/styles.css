@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@keyframes start {
+    0% {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+:root {
+    --darker-color: #11151c;
+    --first-color: #212d40;
+    --borderbg-color: #2e3f5a;
+    --second-color: #364156;
+    --thirsty-color: #0084ff;
+    --white: #ebebeb;
+    --red: #c74040;
+    --green: #40c760;
+    --finished: #38644257;
+}
+
+* {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    width: 100dvw;
+    background-color: var(--darker-color);
+    color: var(--white);
+}
+
+.todo-container {
+    background-color: var(--first-color);
+    outline: 1px solid var(--borderbg-color);
+    box-shadow: 0 50px 60px #090c1053;
+    border-radius: 0.8rem;
+    width: 460px;
+    height: 600px;
+    padding: 2rem;
+    margin: 3rem auto 0;
+    transition: 0.2s;
+}
+
+.todo-input {
+    width: 100%;
+}
+
+button {
+    color: var(--white);
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    background-color: var(--second-color);
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+button i {
+    pointer-events: none;
+}
+
+button:hover {
+    background-color: var(--thirsty-color);
+}
+
+input,
+select {
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    border: #ddd 1px solid;
+    outline: none;
+}
+
+/* todo form */
+
+#todo-form,
+#edit-form {
+    padding: 1rem;
+    border-bottom: 1px solid var(--borderbg-color);
+}
+
+#todo-form p,
+#edit-form p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control {
+    display: flex;
+}
+
+.form-control input {
+    margin-right: 0.3rem;
+}
+
+#cancel-edit-btn {
+    margin-top: 1rem;
+    outline: 1px solid var(--thirsty-color);
+    background-color: transparent;
+}
+
+#cancel-edit-btn:hover {
+    background-color: var(--thirsty-color);
+}
+
+/* toolbar */
+
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid var(--borderbg-color);
+    display: flex;
+}
+
+#toolbar h4 {
+    margin-bottom: 0.5rem;
+}
+
+#search {
+    border-right: 1px solid var(--borderbg-color);
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#search form {
+    display: flex;
+    gap: 0.3rem;
+}
+
+#search input {
+    width: 100%;
+}
+
+#filter {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter select {
+    flex: 1;
+}
+
+/* todolist */
+
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--borderbg-color);
+    transition: 0.3s;
+    border-radius: 1rem;
+    animation: start 1s ease;
+    margin: 0.5rem 0;
+}
+
+.todo h3 {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.todo button {
+    margin-left: 0.4rem;
+}
+
+.todo .remove-todo {
+    outline: 1px solid var(--red);
+    color: var(--red);
+    background-color: transparent;
+}
+
+.todo .remove-todo:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.todo .finish-todo {
+    outline: 1px solid var(--green);
+    color: var(--green);
+    background-color: transparent;
+}
+
+.todo .finish-todo:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.todo .edit-todo {
+    background-color: transparent;
+    outline: 1px solid var(--second-color);
+}
+
+.todo .edit-todo:hover {
+    background-color: var(--thirsty-color);
+    outline: 1px solid var(--thirsty-color);
+}
+
+.done {
+    background-color: var(--finished);
+}
+
+.done h3 {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* footer */
+
+.footer {
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer a {
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+    color: var(--thirsty-color);
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+.hide {
+    display: none;
+}
